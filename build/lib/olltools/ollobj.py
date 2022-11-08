@@ -9,7 +9,7 @@ into various MS Office file formats (doc, xls, ppt, docx, xlsx, pptx, etc)
 
 # === LICENSE =================================================================
 
-# oleobj is copyright (c) 2015-2022 Philippe Lagadec (http://www.decalage.info)
+# ollobj is copyright (c) 2015-2022 Philippe Lagadec (http://www.decalage.info)
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -154,7 +154,7 @@ def get_logger(name, level=logging.CRITICAL+1):
 
 
 # a global logger object used for debugging:
-log = get_logger('oleobj')     # pylint: disable=invalid-name
+log = get_logger('ollobj')     # pylint: disable=invalid-name
 
 
 def enable_logging():
@@ -602,7 +602,7 @@ def get_sane_embedded_filenames(filename, src_path, tmp_path, max_len,
 
     # still not returned? Then we have to make up a name ourselves
     # do not care any more about max_len (maybe it was 0 or negative)
-    yield 'oleobj_%03d' % noname_index
+    yield 'ollobj_%03d' % noname_index
 
 
 def find_ole_in_ppt(filename):
@@ -961,10 +961,9 @@ def main(cmd_line_args=None):
     """
     # print banner with version
     ensure_stdout_handles_unicode()
-    print('oleobj %s - http://decalage.info/oletools' % __version__)
+    print('ollobj %s ' % __version__)
     print('THIS IS WORK IN PROGRESS - Check updates regularly!')
-    print('Please report any issue at '
-          'https://github.com/decalage2/oletools/issues')
+   
     print('')
 
     usage = 'usage: %(prog)s [options] <filename> [filename2 ...]'

@@ -4,11 +4,6 @@ ollform.py
 
 ollform is a python module to parse VBA forms in Microsoft Office files.
 
-Authors: see https://github.com/decalage2/oletools/commits/master/oletools/oleform.py
-License: BSD, see source code or documentation
-
-oleform is part of the python-oletools package:
-http://www.decalage.info/python/oletools
 """
 
 # === LICENSE ==================================================================

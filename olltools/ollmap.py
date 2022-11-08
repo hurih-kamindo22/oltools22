@@ -8,7 +8,7 @@ ollmap parses OLE files to display technical information about its structure.
 
 #=== LICENSE ==================================================================
 
-# olemap is copyright (c) 2015-2019 Philippe Lagadec (http://www.decalage.info)
+# ollmap is copyright (c) 2015-2019 Philippe Lagadec (http://www.decalage.info)
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification,
@@ -77,7 +77,7 @@ from oletools.ezhexviewer import hexdump3
 
 # === CONSTANTS ==============================================================
 
-BANNER = 'olemap %s - http://decalage.info/python/oletools' % __version__
+BANNER = 'ollmap' % __version__
 
 STORAGE_NAMES = {
     olefile.STGTY_EMPTY:     'Empty',
@@ -216,7 +216,7 @@ def show_minifat(ole):
 # === MAIN ===================================================================
 
 def main():
-    usage = 'usage: olemap [options] <filename> [filename2 ...]'
+    usage = 'usage: ollmap [options] <filename> [filename2 ...]'
     parser = optparse.OptionParser(usage=usage)
     parser.add_option("-r", action="store_true", dest="recursive",
                       help='find files recursively in subdirectories.')

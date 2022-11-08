@@ -25,12 +25,12 @@ Supported formats:
 
 # === LICENSE ==================================================================
 
-# olevba is copyright (c) 2014-2022 Philippe Lagadec (http://www.decalage.info)
+# ollvba is copyright (c) 2014-2022 Philippe Lagadec (http://www.decalage.info)
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification,
 # are permitted provided that the following conditions are met:
-#
+
 #  * Redistributions of source code must retain the above copyright notice, this
 #    list of conditions and the following disclaimer.
 #  * Redistributions in binary form must reproduce the above copyright notice,
@@ -49,7 +49,7 @@ Supported formats:
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-# olevba contains modified source code from the officeparser project, published
+# ollvba contains modified source code from the officeparser project, published
 # under the following MIT License (MIT):
 #
 # officeparser is copyright (c) 2014 John William Davison
@@ -215,7 +215,7 @@ from __future__ import print_function
 # 2019-04-09       PL: - decompress_stream accepts bytes (issue #422)
 # 2019-05-23 v0.55 PL: - added option --pcode to call pcodedmp and display P-code
 # 2019-06-05       PL: - added VBA stomping detection
-# 2019-09-24       PL: - included DridexUrlDecode into olevba (issue #485)
+# 2019-09-24       PL: - included DridexUrlDecode into ollvba (issue #485)
 # 2019-12-03       PL: - added support for SLK files and XLM macros in SLK
 # 2020-01-31 v0.56 KS: - added option --no-xlm, improved MHT detection
 # 2020-03-22       PL: - uses plugin_biff to display DCONN objects and their URL
@@ -347,7 +347,7 @@ if sys.version_info[0] <= 2:
     # to use ord on bytes/bytearray items the same way in Python 2+3
     # on Python 2, just use the normal ord() because items are bytes
     byte_ord = ord
-    #: Default string encoding for the olevba API
+    #: Default string encoding for the ollvba API
     DEFAULT_API_ENCODING = 'utf8'  # on Python 2: UTF-8 (bytes)
 else:
     # Python 3.x+
@@ -364,7 +364,7 @@ else:
     # json2ascii also needs "unicode":
     unicode = str
     from functools import reduce
-    #: Default string encoding for the olevba API
+    #: Default string encoding for the ollvba API
     DEFAULT_API_ENCODING = None  # on Python 3: None (unicode)
     # Python 3.0 - 3.4 support:
     # From https://gist.github.com/ynkdir/867347/c5e188a4886bc2dd71876c7e069a7b00b6c16c61
@@ -417,14 +417,14 @@ def bytes2str(bytes_string, encoding='utf8'):
 
 
 # a global logger object used for debugging:
-log = log_helper.get_or_create_silent_logger('olevba')
+log = log_helper.get_or_create_silent_logger('ollvba')
 
 
 def enable_logging():
     """
     Enable logging for this module (disabled by default).
 
-    For use by third-party libraries that import `olevba` as module.
+    For use by third-party libraries that import `ollvba` as module.
 
     This will set the module-specific logger level to `NOTSET`, which
     means the main application controls the actual logging level.
@@ -490,7 +490,7 @@ class SubstreamOpenError(FileOpenError):
         super(SubstreamOpenError, self).__init__(
             str(filename) + '/' + str(subfilename), orig_exc)
         self.filename = filename   # overwrite setting in OlevbaBaseException
-        self.subfilename = subfilename
+        self.subfilename = subfilenameollid
 
 
 class UnexpectedDataError(OlevbaBaseException):
@@ -4333,7 +4333,7 @@ def parse_args(cmd_line_args=None):
 
     DEFAULT_LOG_LEVEL = "warning" # Default log level
 
-    usage = 'usage: olevba [options] <filename> [filename2 ...]'
+    usage = 'usage: ollvba [options] <filename> [filename2 ...]'
     parser = argparse.ArgumentParser(usage=usage)
     parser.add_argument('filenames', nargs='*', help='Files to analyze')
     # parser.add_argument('-o', '--outfile', dest='outfile',
@@ -4417,7 +4417,7 @@ def parse_args(cmd_line_args=None):
     if len(options.filenames) == 0:
         # print banner with version
         python_version = '%d.%d.%d' % sys.version_info[0:3]
-        print('olevba %s on Python %s - http://decalage.info/python/oletools' %
+        print('ollvba %s on Python %s' %
               (__version__, python_version))
         print(__doc__)
         parser.print_help()
@@ -4561,7 +4561,7 @@ def main(cmd_line_args=None):
     # provide info about tool and its version
     if options.output_mode == 'json':
         # print first json entry with meta info
-        print_json(script_name='olevba', version=__version__,
+        print_json(script_name='ollvba', version=__version__,
                    python_version=sys.version_info[0:3],
                    url='http://decalage.info/python/oletools',
                    type='MetaInformation', _json_is_first=True)

@@ -106,7 +106,7 @@ def clsid_display(clsid):
 # === MAIN ===================================================================
 
 def main():
-    usage = 'usage: oledir [options] <filename> [filename2 ...]'
+    usage = 'usage: olldir [options] <filename> [filename2 ...]'
     parser = optparse.OptionParser(usage=usage)
     parser.add_option("-r", action="store_true", dest="recursive",
                       help='find files recursively in subdirectories.')
@@ -168,7 +168,7 @@ def main():
         # TODO: read ALL the actual directory entries from the directory stream, because olefile does not!
         # TODO: OR fix olefile!
         # TODO: olefile should store or give access to the raw direntry data on demand
-        # TODO: oledir option to hexdump the raw direntries
+        # TODO: olldir option to hexdump the raw direntries
         # TODO: olefile should be less picky about incorrect directory structures
 
         for id in range(len(ole.direntries)):

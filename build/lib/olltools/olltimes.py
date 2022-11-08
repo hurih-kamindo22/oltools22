@@ -2,18 +2,18 @@
 """
 olltimes.py
 
-oletimes is a script to parse OLE files such as MS Office documents (e.g. Word,
+olltimes is a script to parse OLE files such as MS Office documents (e.g. Word,
 Excel), to extract creation and modification times of all streams and storages
 in the OLE file.
 
-Usage: oletimes.py <file>
+Usage: olltimes.py <file>
 
 
 """
 
 #=== LICENSE =================================================================
 
-# oletimes is copyright (c) 2013-2019, Philippe Lagadec (http://www.decalage.info)
+# olltimes is copyright (c) 2013-2019, Philippe Lagadec (http://www.decalage.info)
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification,
@@ -107,11 +107,9 @@ def process_ole(ole):
 
 def main():
     # print banner with version
-    print('oletimes %s - http://decalage.info/python/oletools' % __version__)
-    print ('THIS IS WORK IN PROGRESS - Check updates regularly!')
-    print ('Please report any issue at https://github.com/decalage2/oletools/issues')
-
-    usage = 'usage: oletimes [options] <filename> [filename2 ...]'
+    print('olltimes %s '% __version__)
+   
+    usage = 'usage: olltimes [options] <filename> [filename2 ...]'
     parser = optparse.OptionParser(usage=usage)
     parser.add_option("-r", action="store_true", dest="recursive",
                       help='find files recursively in subdirectories.')

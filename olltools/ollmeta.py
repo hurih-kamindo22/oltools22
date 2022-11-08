@@ -2,20 +2,16 @@
 """
 ollmeta.py
 
-olemeta is a script to parse OLE files such as MS Office documents (e.g. Word,
+ollmeta is a script to parse OLE files such as MS Office documents (e.g. Word,
 Excel), to extract all standard properties present in the OLE file.
 
-Usage: olemeta.py <file>
+Usage: ollmeta.py <file>
 
-olemeta project website: http://www.decalage.info/python/olemeta
-
-olemeta is part of the python-oletools package:
-http://www.decalage.info/python/oletools
 """
 
 #=== LICENSE =================================================================
 
-# olemeta is copyright (c) 2013-2019, Philippe Lagadec (http://www.decalage.info)
+# ollmeta is copyright (c) 2013-2019, Philippe Lagadec (http://www.decalage.info)
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification,
@@ -131,11 +127,10 @@ def process_ole(ole):
 
 def main():
     # print banner with version
-    print('olemeta %s - http://decalage.info/python/oletools' % __version__)
+    print('ollmeta %s' % __version__)
     print ('THIS IS WORK IN PROGRESS - Check updates regularly!')
-    print ('Please report any issue at https://github.com/decalage2/oletools/issues')
 
-    usage = 'usage: olemeta [options] <filename> [filename2 ...]'
+    usage = 'usage: ollmeta [options] <filename> [filename2 ...]'
     parser = optparse.OptionParser(usage=usage)
     parser.add_option("-r", action="store_true", dest="recursive",
                       help='find files recursively in subdirectories.')
