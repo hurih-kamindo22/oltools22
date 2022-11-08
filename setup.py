@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Installs olltools using distutils
+Installs olltolls using distutils
 
 Run:
     python setup.py install
@@ -9,36 +9,6 @@ to install this package.
 
 (setup script partly borrowed from cherrypy)
 """
-
-#--- CHANGELOG ----------------------------------------------------------------
-
-# 2014-08-27 v0.06 PL: - added doc subfolder
-# 2015-01-05 v0.07 PL: - added xglob, prettytable
-# 2015-02-08 v0.08 PL: - added DridexUrlDecoder
-# 2015-03-23 v0.09 PL: - updated description and classifiers, added shebang line
-# 2015-06-16 v0.10 PL: - added pyparsing
-# 2016-02-08 v0.42 PL: - added colorclass, tablestream
-# 2016-07-19 v0.50 PL: - create CLI scripts using entry points (by 2*yo)
-# 2016-07-29       PL: - use setuptools if available
-# 2016-09-05       PL: - added more entry points
-# 2017-01-18 v0.51 PL: - added package zipfile27 (issue #121)
-# 2017-10-18 v0.52 PL: - added msodde
-# 2018-03-19 v0.52.3      PL: - added install_requires, removed thirdparty.pyparsing
-# 2018-09-11 v0.54 PL: - olefile is now a dependency
-# 2018-09-15       PL: - easygui is now a dependency
-# 2018-09-22       PL: - colorclass is now a dependency
-# 2018-10-27       PL: - fixed issue #359 (bug when importing log_helper)
-# 2019-02-26       CH: - add optional dependency msoffcrypto for decryption
-# 2019-05-22       PL: - 'msoffcrypto-tool' is now a required dependency
-# 2019-05-23 v0.55 PL: - added pcodedmp as dependency
-# 2019-09-24       PL: - removed oletools.thirdparty.DridexUrlDecoder
-# 2019-11-10       PL: - changed pyparsing from 2.2.0 to 2.1.0 for issue #481
-# 2021-05-22 v0.60 PL: - entry points: added ftguess, removed olevba3/mraptor3
-# 2021-06-02           - added XLMMacroDeobfuscator dependencies as optional
-
-
-#--- TODO ---------------------------------------------------------------------
-
 
 #--- IMPORTS ------------------------------------------------------------------
 
@@ -55,7 +25,9 @@ import os, fnmatch
 #--- METADATA -----------------------------------------------------------------
 
 name         = "olltools"
-author       = "TEAM-DEV"
+desc         = "Python tools to analyze security characteristics of MS Office and OLE files (also called Structured Storage, Compound File Binary Format or Compound Document File Format), for Malware Analysis and Incident Response #DFIR"
+long_desc    = open('olltools/README.rst').read()
+author       = "TEAM-DEV KMI"
 
 
 # see https://pypi.org/pypi?%3Aaction=list_classifiers
@@ -155,9 +127,6 @@ def rglob(top, prefix='', pattern='*'):
     """
     return list(riglob(top, prefix, pattern))
 
-
-
-
 package_data={
     'olltools': [
         'README.rst',
@@ -169,21 +138,21 @@ package_data={
         # + rglob('olltools/doc', 'doc', '*.md')
         # + rglob('olltools/doc', 'doc', '*.png'),
 
-    # 'olltools.thirdparty.xglob': [
-    #     'LICENSE.txt',
-    #     ],
-    # 'olltools.thirdparty.xxxswf': [
-    #     'LICENSE.txt',
-    #     ],
-    # 'olltools.thirdparty.prettytable': [
-    #     'CHANGELOG', 'COPYING', 'README'
-    #     ],
-    # 'olltools.thirdparty.DridexUrlDecoder': [
-    #     'LICENSE.txt',
-    #     ],
-    # 'olltools.thirdparty.tablestream': [
-    #     'LICENSE', 'README',
-    #     ],
+    'olltools.thirdparty.xglob': [
+        'LICENSE.txt',
+        ],
+    'olltools.thirdparty.xxxswf': [
+        'LICENSE.txt',
+        ],
+    'olltools.thirdparty.prettytable': [
+        'CHANGELOG', 'COPYING', 'README'
+        ],
+    'olltools.thirdparty.DridexUrlDecoder': [
+        'LICENSE.txt',
+        ],
+    'olltools.thirdparty.tablestream': [
+        'LICENSE', 'README',
+         ],
     }
 
 
@@ -283,7 +252,7 @@ entry_points = {
     ],
 }
 
-# scripts=['olltools/ollvba.py', 'olltools/mraptor.py']
+# scripts=['oletools/olevba.py', 'oletools/mraptor.py']
 
 
 # === MAIN =====================================================================
@@ -297,9 +266,12 @@ def main():
 
     dist = setup(
         name=name,
+        description=desc,
+        long_description=long_desc,
         classifiers=classifiers,
         author=author,
         # package_dir=package_dir,
+        packages=packages,
         package_data = package_data,
         # data_files=data_files,
         entry_points=entry_points,

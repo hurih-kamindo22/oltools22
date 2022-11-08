@@ -1,0 +1,11 @@
+INSTALL.txt
+MANIFEST.in
+install.bat
+requirements.txt
+setup.py
+oletools.egg-info/PKG-INFO
+oletools.egg-info/SOURCES.txt
+oletools.egg-info/dependency_links.txt
+oletools.egg-info/entry_points.txt
+oletools.egg-info/requires.txt
+oletools.egg-info/top_level.txt

@@ -1,0 +1,17 @@
+[console_scripts]
+ezhexviewer = oletools.ezhexviewer:main
+ftguess = oletools.ftguess:main
+mraptor = oletools.mraptor:main
+msodde = oletools.msodde:main
+ollbrowse = oletools.ollbrowse:main
+olldir = oletools.olldir:main
+ollfile = ollfile.ollfile:main
+ollid = oletools.ollid:main
+ollmap = oletools.ollmap:main
+ollmeta = oletools.ollmeta:main
+ollobj = oletools.ollobj:main
+olltimes = oletools.olltimes:main
+ollvba = oletools.ollvba:main
+pyxswf = oletools.pyxswf:main
+rtfobj = oletools.rtfobj:main
+
